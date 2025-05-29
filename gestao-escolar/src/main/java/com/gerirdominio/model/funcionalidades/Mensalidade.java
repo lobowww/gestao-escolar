@@ -1,6 +1,5 @@
 package com.gerirdominio.model.funcionalidades;
-
-import java.time.*;
+import java.time.LocalDate;
 
 public class Mensalidade {
     private int id;
