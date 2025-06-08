@@ -1,5 +1,9 @@
 package com.gerirdominio.model.users;
 
+import java.sql.Connection;
+
+import com.gerirdominio.util.ConnectionFactory;
+
 public abstract class Usuario {
     private int id;
     private String nome;
@@ -26,9 +30,7 @@ public abstract class Usuario {
         this.login = login;
         this.senha = senha;
     }
-
-    //Falta método autenticar para login
-    
+        
     public int getId() {
         return id;
     }

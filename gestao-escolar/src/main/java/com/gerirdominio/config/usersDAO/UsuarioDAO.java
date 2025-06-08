@@ -37,7 +37,7 @@ public class UsuarioDAO {
                 stmt.setString(3, usuario.getTelefone());
                 stmt.setString(4, usuario.getEmail());
                 stmt.setString(5, usuario.getLogin());
-                stmt.setString(6, usuario.getSenha()); // IMPORTANTE: Armazene um HASH da senha, não a senha pura!
+                stmt.setString(6, usuario.getSenha());
                 stmt.setString(7, getTipoUsuarioString(usuario));
                 stmt.executeUpdate();
 
@@ -161,5 +161,20 @@ public class UsuarioDAO {
         if (usuario instanceof Coordenador) return "COORDENADOR";
         if (usuario instanceof Diretor) return "DIRETOR";
         throw new IllegalArgumentException("Tipo de usuário não suportado");
+    }
+
+    public Optional<Usuario> buscarPorCpf(String cpf) throws SQLException {
+        String sql = "SELECT id FROM usuarios WHERE cpf = ?";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, cpf);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    // Se encontrou um CPF, usa o buscarPorId para carregar o objeto completo
+                    return buscarPorId(rs.getInt("id"));
+                }
+            }
+        }
+        return Optional.empty();
     }
 }
