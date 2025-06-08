@@ -6,10 +6,10 @@ public class MenuPrincipal {
 
     public static void MenuPrincipal(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("======================GERIR - SISTEMA DE GESTÃO ESCOLAR===================\n
-                            Seja bem vindo ao nosso sistema!\n
-                            Por gentileza informe:\n
-                            Login: ");
+        System.out.println("======================GERIR - SISTEMA DE GESTÃO ESCOLAR===================\n" +
+                            "Seja bem vindo ao nosso sistema!\n"+
+                            "Por gentileza informe:\n"+
+                            "Login: ");
         String login = scan.nextLine();
         System.out.println("Senha: ");
         String senha = scan.nextLine();

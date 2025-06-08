@@ -1,6 +1,7 @@
 package com.gerirdominio.model.funcionalidades;
+import java.time.LocalTime;
 
-import java.time.*;
+import com.gerirdominio.model.users.Professor;
 
 public class Aula {
     private String dia;
@@ -60,6 +61,6 @@ public class Aula {
     @Override
     public String toString() {
         return "Disciplina: " + disciplina + 
-        "\n"dia + " de " + horarioInicio + " até "+ horarioFim + "com o professor(a): " + professor;
+        "\n" + dia + " de " + horarioInicio + " até "+ horarioFim + "com o professor(a): " + professor;
     }
 }

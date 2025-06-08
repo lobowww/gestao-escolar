@@ -1,6 +1,7 @@
 package com.gerirdominio.model.funcionalidades;
-
 import java.util.List;
+
+import com.gerirdominio.model.users.Aluno;
 
 public class Turma {
     private int id;

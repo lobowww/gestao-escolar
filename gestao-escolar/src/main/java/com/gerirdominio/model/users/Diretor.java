@@ -2,6 +2,8 @@ package com.gerirdominio.model.users;
 
 import java.util.List;
 
+import com.gerirdominio.model.funcionalidades.Turma;
+
 public class Diretor extends Usuario {
     private List<Coordenador> coordenadores;
     private List<Professor> professores;

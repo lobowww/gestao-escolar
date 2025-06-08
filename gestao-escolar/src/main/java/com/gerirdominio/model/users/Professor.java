@@ -1,6 +1,8 @@
 package com.gerirdominio.model.users;
-
 import java.util.List;
+
+import com.gerirdominio.model.funcionalidades.Grade;
+import com.gerirdominio.model.funcionalidades.Turma;
 
 public class Professor extends Usuario {
     private String disciplina;
@@ -16,22 +18,6 @@ public class Professor extends Usuario {
     }
 
     //Métodos a criar: registrarPresenca, lançarNotas, consultarGrade
-    
-    public void registrarPresenca(Turma turma){
-        System.out.println(turma.getAlunos() + "Presença confirmada");
-        
-
-
-    }
-    public void lancarNotas(Aluno aluno, Disciplina disciplina, double nota){
-        aluno.adcNotas(disciplina, nota);
-        System.out.println("Aluno: " + aluno + " Disciplina: " + disciplina + " Nota: " + nota);
-
-    }
-    public void consultarGrade(){
-
-    }
-
     public String getDisciplina() {
         return disciplina;
     }

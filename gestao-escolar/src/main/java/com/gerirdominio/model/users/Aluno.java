@@ -1,6 +1,8 @@
 package com.gerirdominio.model.users;
-
 import java.util.List;
+
+import com.gerirdominio.model.funcionalidades.Mensalidade;
+import com.gerirdominio.model.funcionalidades.Turma;
 
 public class Aluno extends Usuario {
     private String matricula;
@@ -16,10 +18,6 @@ public class Aluno extends Usuario {
     }
 
     //Métodos a criar: consultarNotas, consultarFaltas, consultarGrade, Adc notas, adc presença
-    public void adcNotas(Disciplina disciplina, double nota){
-
-    }
-
     public String getMatricula() {
         return matricula;
     }
