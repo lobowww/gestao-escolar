@@ -13,7 +13,7 @@ public class MenuPrincipal {
         String login = scan.nextLine();
         System.out.println("Senha: ");
         String senha = scan.nextLine();
-        String tipomenu;
+        String tipomenu = "Diretor";
 
         
 

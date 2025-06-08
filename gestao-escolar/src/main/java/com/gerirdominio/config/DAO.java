@@ -6,9 +6,9 @@ import java.util.Optional;
 
 public interface DAO<T> {
 
-    public T insert(T entity) throws SQLException;
+    public void inserir(T entity) throws SQLException;
 
-    public void update(T entity) throws SQLException;
+    public void atualizar(T entity) throws SQLException;
     
     public void delete(T entity) throws SQLException;
 
