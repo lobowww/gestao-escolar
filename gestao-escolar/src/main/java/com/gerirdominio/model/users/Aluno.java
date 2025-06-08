@@ -1,6 +1,7 @@
 package com.gerirdominio.model.users;
 import java.util.List;
 
+import com.gerirdominio.model.funcionalidades.Disciplina;
 import com.gerirdominio.model.funcionalidades.Mensalidade;
 import com.gerirdominio.model.funcionalidades.Turma;
 
@@ -18,6 +19,29 @@ public class Aluno extends Usuario {
     }
 
     //Métodos a criar: consultarNotas, consultarFaltas, consultarGrade, Adc notas, adc presença
+    public void consultarNotas(){
+        System.out.println("Notas para o aluno " + nome);
+        if (turma != null && turma.getGrade() != null) {
+            for (Disciplina disciplina : turma.getGrade().getDisciplina()) {
+                System.out.println(" - " + disciplina.getNome() + ": [Nota: 2.0]" );
+            }
+            
+        } else{
+            System.out.println("Aluno não está em turma");
+        }
+
+    }
+
+    public void consultarFaltas(){
+        System.out.println("Faltas para o aluno: " + nome);
+        System.out.println("[20]");
+
+    }
+    public void consultarGrade(){
+
+    }
+
+
     public String getMatricula() {
         return matricula;
     }
@@ -47,5 +71,10 @@ public class Aluno extends Usuario {
         return "Matricula: "+ matricula + 
         "\nAluno: " + super.getNome() + 
         "\nTurma: " + turma.getNome();
+    }
+
+    @Override
+    public boolean autenticar() {
+        return login != null && senha != null;
     }
 }

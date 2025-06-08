@@ -1,13 +1,13 @@
 package com.gerirdominio.model.users;
 
 public abstract class Usuario {
-    private int id;
-    private String nome;
-    private String cpf;
-    private String telefone;
-    private String email;
-    private String login;
-    private String senha;
+    protected int id;
+    protected String nome;
+    protected String cpf;
+    protected String telefone;
+    protected String email;
+    protected String login;
+    protected String senha;
     
     protected Usuario(int id, String nome, String cpf, String telefone, String email, String login, String senha) {//Construtor com validação geral dos dados
         if (nome == null || nome.isEmpty() ||
@@ -28,6 +28,7 @@ public abstract class Usuario {
     }
 
     //Falta método autenticar para login
+    public abstract boolean autenticar();
     
     public int getId() {
         return id;

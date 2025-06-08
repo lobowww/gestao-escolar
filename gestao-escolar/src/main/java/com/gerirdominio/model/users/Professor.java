@@ -1,6 +1,7 @@
 package com.gerirdominio.model.users;
 import java.util.List;
 
+import com.gerirdominio.model.funcionalidades.Disciplina;
 import com.gerirdominio.model.funcionalidades.Grade;
 import com.gerirdominio.model.funcionalidades.Turma;
 
@@ -18,6 +19,28 @@ public class Professor extends Usuario {
     }
 
     //Métodos a criar: registrarPresenca, lançarNotas, consultarGrade
+
+    public void registrarPresenca(Turma turma){
+        System.out.println(turma.getAlunos() + "Presença confirmada");
+        
+
+
+    }
+    public void lancarNotas(Turma turma){
+        if (turmas.contains(turma)) {
+            System.out.println("Notas lançadas para a turma " + turma.getNome());
+
+            
+        }else {
+            System.out.println("Você não lançou nota para esta turma");
+        }
+
+    }
+    public void consultarGrade(){
+        
+
+    }
+
     public String getDisciplina() {
         return disciplina;
     }
@@ -48,5 +71,11 @@ public class Professor extends Usuario {
         "\nDisciplina: " + disciplina +
         "\nTurma: " + turmas.size() +
         "\nGrades: " + grades.size();
+    }
+
+    @Override
+    public boolean autenticar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'autenticar'");
     }
 }

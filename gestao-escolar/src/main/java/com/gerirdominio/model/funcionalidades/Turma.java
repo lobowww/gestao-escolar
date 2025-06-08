@@ -10,14 +10,17 @@ public class Turma {
     private int ano;//2025
     private List<Aluno> alunos;
     private Grade grade;
+    private Disciplina disciplina;
     
-    public Turma(int id, String nome, String turno, int ano, List<Aluno> alunos, Grade grade) {
+    
+    public Turma(int id, String nome, String turno, int ano, List<Aluno> alunos, Grade grade, Disciplina disciplina ) {
         this.id = id;
         this.nome = nome;
         this.turno = turno;
         this.ano = ano;
         this.alunos = alunos;
         this.grade = grade;
+        this.disciplina = disciplina;
     }
 
     //Métodos a criar: adicionarAluno, removerAluno
@@ -33,23 +36,23 @@ public class Turma {
     public String getNome() {
         return nome;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     public List<Aluno> getAlunos() {
         return alunos;
     }
-
+    
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
-
+    
     public Grade getGrade() {
         return grade;
     }
-
+    
     public void setGrade(Grade grade) {
         this.grade = grade;
     }
@@ -57,19 +60,26 @@ public class Turma {
     public String getTurno() {
         return turno;
     }
-
+    
     public void setTurno(String turno) {
         this.turno = turno;
     }
-
+    
     public int getAno() {
         return ano;
     }
-
+    
     public void setAno(int ano) {
         this.ano = ano;
     }
+    
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
 
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
     @Override
     public String toString() {
         return "Turma: " + nome + "contém " + alunos.size() + "alunos.";
